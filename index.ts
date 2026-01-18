@@ -16,6 +16,8 @@ app.use(express.json())
 app.use(bodyparser.json());
 
 
+console.log("PGPASSWORD:", process.env.PGPASSWORD)
+
 const client = new Pool({
     host: "aws-0-us-west-2.pooler.supabase.com",
     port: 5432,
