@@ -32,7 +32,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.use('/api', apiRouter);
 app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running at 0.0.0.0:${8080}`);
+    console.log(`Server listening on port ${port} and address 0.0.0.0`);
 });
 
 export default client
