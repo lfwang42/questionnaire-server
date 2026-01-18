@@ -3,7 +3,7 @@ import apiRouter from './routes/api';
 import dotenv from 'dotenv'
 import bodyparser from 'body-parser';
 var cors = require('cors')
-import { Pool } from 'pg'
+import { Pool, PoolConfig} from 'pg'
 
 
 
@@ -16,15 +16,18 @@ app.use(express.json())
 app.use(bodyparser.json());
 
 
-console.log("PGPASSWORD:", process.env.PGPASSWORD)
 
-const client = new Pool({
+const poolOptions: PoolConfig = {
     host: "aws-0-us-west-2.pooler.supabase.com",
     port: 5432,
     database: "postgres",
     user: "postgres.haeondhsmdfqflttsiod",
     password: process.env.PGPASSWORD
-});
+}
+
+console.log("options:", poolOptions);
+
+const client = new Pool(poolOptions);
 client.connect()
 
 

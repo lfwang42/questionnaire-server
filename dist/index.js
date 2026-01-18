@@ -15,13 +15,15 @@ const port = 8080;
 app.use(cors());
 app.use(express_1.default.json());
 app.use(body_parser_1.default.json());
-const client = new pg_1.Pool({
+const poolOptions = {
     host: "aws-0-us-west-2.pooler.supabase.com",
     port: 5432,
     database: "postgres",
     user: "postgres.haeondhsmdfqflttsiod",
     password: process.env.PGPASSWORD
-});
+};
+console.log("options:", poolOptions);
+const client = new pg_1.Pool(poolOptions);
 client.connect();
 app.get('/', (req, res) => {
     res.send('Hello, TypeScript Express!');
