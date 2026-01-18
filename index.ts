@@ -10,7 +10,7 @@ import { Pool } from 'pg'
 
 dotenv.config({path: './.env'});
 const app = express();
-const port = 3001;
+const port = 8080;
 app.use(cors())
 app.use(express.json())
 app.use(bodyparser.json());
@@ -32,7 +32,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.use('/api', apiRouter);
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${8080}`);
 });
 
 export default client
