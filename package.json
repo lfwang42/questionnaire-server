@@ -23,7 +23,6 @@
     "@types/express": "^5.0.6",
     "@types/node": "^25.0.9",
     "express": "^5.2.1",
-    "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
@@ -32,6 +31,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "pg": "^8.17.1",
-    "postgres": "^3.4.8"
+    "postgres": "^3.4.8",
+    "ts-node": "^10.9.2"
   }
 }
