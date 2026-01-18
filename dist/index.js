@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
     res.send('Hello, TypeScript Express!');
 });
 app.use('/api', api_1.default);
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${8080}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server listening on port ${port} and address 0.0.0.0`);
 });
 exports.default = client;
