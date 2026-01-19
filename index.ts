@@ -25,7 +25,7 @@ const poolOptions: PoolConfig = {
     password: process.env.PGPASSWORD
 }
 
-console.log("options:", poolOptions);
+// console.log("options:", poolOptions);
 
 const client = new Pool(poolOptions);
 client.connect()
