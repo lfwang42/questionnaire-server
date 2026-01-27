@@ -62,7 +62,10 @@ function insertResponse() {
         const preserve = data.preserve;
         const style = data.style;
         const text = data.text;
-        const rcode = await client.query('INSERT INTO responses (key, overall, preserve, style, comments, overall_rating, preserve_rating, style_rating) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)', [key, overall, preserve, style, text, data.overallRating, data.preserveRating, data.styleRating]);   
+        const q1c = data.q1c;
+        const q1d = data.q1d;
+        //insert into db
+        const rcode = await client.query('INSERT INTO responses (key, overall, preserve, style, comments, overall_rating, preserve_rating, style_rating, q1c, q1d) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)', [key, overall, preserve, style, text, data.overallRating, data.preserveRating, data.styleRating, q1c, q1d]);   
         res.status(200).send({ message: 'Data received successfully' });
         next();
     }
