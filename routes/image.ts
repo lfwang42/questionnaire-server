@@ -29,16 +29,6 @@ function pickRandomImage() {
         photo: files.photo,
         painting: files.painting
     }
-    // const res = [];
-    // try {
-    //     for (const name of names) {
-    //         res.push('https://style-transfer-questionnaire.s3.us-east-2.amazonaws.com/Combinations3/' + randKey + '/' + name);
-    //     }
-    // }
-    // catch (err) {
-    //     console.log(names);
-    //     console.error(err);
-    // }
 
     return resJson;
 }
@@ -64,8 +54,9 @@ function insertResponse() {
         const text = data.text;
         const q1c = data.q1c;
         const q1d = data.q1d;
+        const q1e   = data.q1e;
         //insert into db
-        const rcode = await client.query('INSERT INTO responses (key, overall, preserve, style, comments, overall_rating, preserve_rating, style_rating, q1c, q1d) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)', [key, overall, preserve, style, text, data.overallRating, data.preserveRating, data.styleRating, q1c, q1d]);   
+        const rcode = await client.query('INSERT INTO responses (key, overall, preserve, style, comments, overall_rating, preserve_rating, style_rating, q1c, q1d, q1e) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)', [key, overall, preserve, style, text, data.overallRating, data.preserveRating, data.styleRating, q1c, q1d, q1e]);   
         res.status(200).send({ message: 'Data received successfully' });
         next();
     }
