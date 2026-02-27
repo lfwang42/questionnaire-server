@@ -2,7 +2,7 @@ from collections import defaultdict
 import os
 import json
 from time import sleep
-path = '/mnt/g/Downloads/Combinations4/Combinations4'
+path = '/mnt/g/Downloads/Combinations5/Combinations5'
 paintings_path = '/mnt/g/Downloads/paintings1/paintings'
 import shutil
 dict = {}
